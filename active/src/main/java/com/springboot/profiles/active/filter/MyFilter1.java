@@ -4,12 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springboot.profiles.active.exception.ApiRequestException;
 import com.springboot.profiles.active.exception.ApiRequestExceptionHandler;
 import com.springboot.profiles.active.exception.ResponsePayload;
-import org.springframework.context.ApplicationContext;
-import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -40,16 +35,16 @@ public class MyFilter1 implements Filter {
 
 
 
-        System.out.println("URL Path : - "+request.getRequestURL());
-        System.out.println("request URI"+request.getMethod());
-        System.out.println("user "+request.getRemoteUser());
-        System.out.println("Auth Type"+request.getAuthType());
+        System.out.println("URL Path    "+request.getRequestURL());
+        System.out.println("context path  "+request.getContextPath());
+        System.out.println("user        "+request.getRemoteUser());
+        System.out.println("request URI "+request.getRequestURI());
 
         String requestMethod = request.getMethod();
         System.out.println("Request Method :- "+requestMethod);
 
         try {
-            if (requestMethod.equals("GET")){
+            if (requestMethod.equals("POST")){
                 System.out.println("throwing exceptions : : ");
                 throw new ApiRequestException("Users GET request");
             }

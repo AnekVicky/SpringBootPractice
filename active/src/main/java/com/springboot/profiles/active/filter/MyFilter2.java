@@ -20,6 +20,7 @@ public class MyFilter2 implements Filter {
         System.out.println("request URI : - "+request.getRequestURI());
         System.out.println("user :-         "+request.getRemoteUser());
         System.out.println("Auth Type : - "  +request.getAuthType());
+        System.out.println("request URI  :- "+request.getRequestURI());
 
 
         filterChain.doFilter(servletRequest,servletResponse);
