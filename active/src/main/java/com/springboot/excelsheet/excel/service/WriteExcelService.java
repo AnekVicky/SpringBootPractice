@@ -9,6 +9,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.hibernate.jdbc.Work;
 import org.springframework.stereotype.Service;
 import javax.sql.DataSource;
 
@@ -20,19 +21,19 @@ import java.util.List;
 @Service
 public class WriteExcelService {
 
-public void writeData(){
+public Workbook writeData(){
     List<Player> list = Arrays.asList(
 
-      new Player("Anek","India"),
-      new Player("Lalu","Thailand"),
+      new Player("Vicky","India"),
+      new Player("Singh","Thailand"),
             new Player("Pele","Argentina")
     );
 
     List<String> headers = Arrays.asList("Player_Name","Player_Country");
-
+    Workbook workbook = new XSSFWorkbook();
       try {
 
-            Workbook workbook = new XSSFWorkbook();
+
             Sheet sheet = workbook.createSheet("players_details");
             System.out.println("No of sheets" + workbook.getNumberOfSheets());
 
@@ -63,8 +64,11 @@ public void writeData(){
             }
 
 
-          FileOutputStream fos = new FileOutputStream("hockey_players.xlsx");
+
+          FileOutputStream fos = new FileOutputStream("\\hockey_players.xlsx");
           workbook.write(fos);
+
+
 
 
         } catch (Exception ioe) {
@@ -73,7 +77,7 @@ public void writeData(){
 
         }
 
-
+    return workbook;
     }
 }
 
