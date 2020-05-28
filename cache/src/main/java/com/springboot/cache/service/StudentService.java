@@ -14,7 +14,7 @@ public class StudentService {
     public Student getStudent(String id){
 
         System.out.println("********   hitting the db  ************");
-        Student student = new Student("1","Anek","Singh",7204368684l);
+        Student student = new Student("1","Anek","Singh",7L);
 
         return student;
 

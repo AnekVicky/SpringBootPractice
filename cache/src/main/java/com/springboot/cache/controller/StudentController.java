@@ -23,7 +23,6 @@ public class StudentController {
     public ResponseEntity<Student> getStudent(@PathVariable("id") String id){
 
 
-
        return new ResponseEntity<Student>(studentService.getStudent(id), HttpStatus.OK);
     }
 

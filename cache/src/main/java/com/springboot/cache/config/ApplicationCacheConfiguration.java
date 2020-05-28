@@ -13,8 +13,14 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationCacheConfiguration extends CachingConfigurerSupport {
 
  /*
-  this caching is explicitly using net.sf.CacheManager and  net.sf.CacheConfiguration
+  this caching is explicitly using
+
+  net.sf.ehcache.CacheManager and  net.sf.ehcache.config.CacheConfiguration
+
   But Spring EhCacheManagerFactoryBean internally uses this only
+
+
+  CacheManger <- Configuration <- CacheConfiguration
 
     */
 
