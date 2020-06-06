@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.Filter;
-
+/*
 @Configuration
 public class FilterConfiguration {
 
@@ -39,4 +39,4 @@ public class FilterConfiguration {
 
 
 
-}
+}*/

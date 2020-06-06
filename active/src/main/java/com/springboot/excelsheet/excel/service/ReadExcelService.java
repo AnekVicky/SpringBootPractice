@@ -7,8 +7,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -91,7 +93,13 @@ public class ReadExcelService {
 
     }
 
-    public List<Player> getExcelData() {
+    public List<Player> getExcelData() throws Exception{
+
+       // InputStream is = getClass().getResourceAsStream("abc.txt");
+
+        File file = new File("player.xlsx");
+        FileInputStream fis = new FileInputStream(file);
+        System.out.println("valu e is "+fis.toString());
 
        return  excelRepository.findAll();
 

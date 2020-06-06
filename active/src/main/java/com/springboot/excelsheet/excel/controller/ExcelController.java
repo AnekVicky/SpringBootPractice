@@ -41,14 +41,14 @@ public class ExcelController {
     }
 
     @GetMapping("/excel/data")
-    public List<Player> getExcelData(){
+    public List<Player> getExcelData() throws Exception {
 
     return  readExcelService.getExcelData();
 
     }
 
     @GetMapping("/download/excel")
-    public ResponseEntity<byte[]> downloadTemplate() throws Exception{
+    public ResponseEntity<byte[]> downloadExcel() throws Exception{
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         Workbook workbook = writeExcelService.writeData();
