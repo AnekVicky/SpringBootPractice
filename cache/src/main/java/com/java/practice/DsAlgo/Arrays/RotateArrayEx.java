@@ -1,6 +1,4 @@
-package com.java.practice.DsAlgo;
-
-import java.util.Arrays;
+package com.java.practice.DsAlgo.Arrays;
 
 public class RotateArrayEx {
     public static void main(String[] args) {
